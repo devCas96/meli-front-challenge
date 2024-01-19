@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import GeneralPageLayout from '@/components/templates/general-page-layout';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <GeneralPageLayout>{children}</GeneralPageLayout>
+      </body>
     </html>
   );
 }

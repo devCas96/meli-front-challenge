@@ -9,7 +9,9 @@ export default function GeneralPageLayout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <section>{children}</section>
+      </main>
     </>
   );
 }

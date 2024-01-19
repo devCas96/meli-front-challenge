@@ -1,0 +1,1 @@
+export const IS_VALID_STRING_REGEX = /^[a-z,ñ\s]{0,255}$/i;
