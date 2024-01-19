@@ -21,16 +21,14 @@
 
   --meli-desktop-screen: 680px;
 
-  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--meli-color-palette-dark);
   background-color: var(--meli-color-palette-lightgay);
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+main {
+  width: 80%;
+  margin: 0 auto;
   min-height: 100dvh;
 }
 
