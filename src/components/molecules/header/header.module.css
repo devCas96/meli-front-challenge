@@ -1,0 +1,12 @@
+.header {
+  background-color: var(--meli-color-palette-yellow);
+  padding: 8px 0;
+
+  .header__wrapper {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+  }
+}

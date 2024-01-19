@@ -33,3 +33,13 @@
   padding: 6rem;
   min-height: 100dvh;
 }
+
+input {
+  color: rgba(0, 0, 0, .8980392157);
+  font-size: var(--meli-font-size-xs);
+}
+
+input::placeholder {
+  color: var(--meli-color-palette-gray);
+  font-size: var(--meli-font-size-s);
+}
