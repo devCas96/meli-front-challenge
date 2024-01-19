@@ -1,0 +1,35 @@
+@import url('./reset.css');
+
+:root {
+  --meli-color-palette-yellow: #FFE600;
+  --meli-color-palette-dark: #333333;
+  --meli-color-palette-darkgray: #666666;
+  --meli-color-palette-gray: #999999;
+  --meli-color-palette-lightgay: #EEEEEE;
+  --meli-color-palette-blue: #3483FA;
+
+  --meli-font-size-xxxs: 12px;
+  --meli-font-size-xxs: 14px;
+  --meli-font-size-xs: 16px;
+  --meli-font-size-s: 18px;
+  --meli-font-size-sm: 24px;
+  --meli-font-size-m: 28px;
+  --meli-font-size-l: 46px;
+
+  --meli-spacing-s: 16px;
+  --meli-spacing-m: 32px;
+
+  --meli-desktop-screen: 680px;
+
+  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
+  background-color: var(--meli-color-palette-lightgay);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100dvh;
+}
