@@ -4,6 +4,8 @@ import Image from 'next/image';
 import priceByCurrency from '@/utilities/price-by-currency';
 import { IProductsLocal } from '@/types/types';
 import { Locales } from '@/constants/locales';
+import { CloudnaryImages } from '@/constants/cloudnary-media';
+import Icon from '@/components/atoms/icon/icon';
 import styles from './product-list.module.css';
 
 interface productListProps {
@@ -15,7 +17,7 @@ export default function ProductList({ products }: productListProps) {
     <ol className={styles.products}>
       {products.items.map((product) => (
         <li key={product.id} className={styles.products__item}>
-          <Link href={'/items/productx'}>
+          <Link href={`/items/${product.id}`}>
             <Image
               className={styles.products__image}
               src={product.picture}
@@ -31,11 +33,18 @@ export default function ProductList({ products }: productListProps) {
                 product.price.currency,
                 Locales.ES_AR
               )}
-              <span>icon</span>
+              {product.free_shipping && (
+                <Icon
+                  iconSrc={CloudnaryImages.ICON_FREE_SHIPPING}
+                  iconWidth={20}
+                  iconHeight={20}
+                  iconAlt='item free shipping'
+                />
+              )}
             </p>
             <h2>{product.title}</h2>
           </div>
-          <span>City</span>
+          <span>{product.city}</span>
         </li>
       ))}
     </ol>

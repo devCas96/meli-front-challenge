@@ -21,12 +21,20 @@
   }
 
   .products__info>p {
+    display: flex;
+    align-items: center;
     font-size: var(--meli-font-size-sm);
     margin-bottom: var(--meli-spacing-m);
   }
 
+  .products__info>p>img {
+    margin-left: 10px;
+  }
+
   .products__info>h2 {
     font-size: var(--meli-font-size-s);
+    max-width: 70%;
+    text-wrap: pretty;
   }
 
   .products__item>span {

@@ -1,8 +1,17 @@
-//local interfaces
+//Local interfaces
 
+export interface IFullProductLocal {
+  author: IAuthor;
+  item: IFullItem;
+}
+
+export interface IFullItem extends IItem {
+  sold_quantity: number,
+  description?: string
+}
 export interface IProductsLocal {
   author: IAuthor;
-  categories: string[];
+  categories?: string[];
   items: IItem[];
 }
 
@@ -13,6 +22,8 @@ export interface IAuthor {
 
 export interface IItem {
   id: string;
+  seller_id: number;
+  city?: string;
   title: string;
   price: IPrice;
   picture: string;
@@ -26,11 +37,42 @@ export interface IPrice {
   decimals: number;
 }
 
-//external API interfaces
+//External API interfaces
 
 export interface IApiData {
   product: IProductServices;
 }
+
+export interface IUser {
+  id: number;
+  nickname: string;
+  country_id: string;
+  address: Address;
+  user_type: string;
+  site_id: string;
+  permalink: string;
+  seller_reputation: SellerReputation;
+  status: Status;
+}
+
+export interface Address {
+  city: string;
+  state: string;
+}
+
+export interface SellerReputation {
+  level_id: string;
+  power_seller_status: string;
+  transactions: Transactions;
+}
+
+export interface Transactions {
+}
+
+export interface Status {
+  site_status: string;
+}
+
 
 export interface IProductServices {
   site_id: SiteID;
@@ -283,3 +325,107 @@ export interface VariationsDatum {
   name: string;
   pictures_qty: number;
 }
+
+export interface IFullProductServices {
+  id: string;
+  site_id: string;
+  title: string;
+  seller_id: number;
+  category_id: string;
+  official_store_id: null;
+  price: number;
+  base_price: number;
+  original_price: null;
+  currency_id: string;
+  initial_quantity: number;
+  sale_terms: SaleTerm[];
+  buying_mode: string;
+  listing_type_id: string;
+  condition: string;
+  permalink: string;
+  thumbnail_id: string;
+  thumbnail: string;
+  pictures: Picture[];
+  video_id: null;
+  descriptions: [];
+  accepts_mercadopago: boolean;
+  non_mercado_pago_payment_methods: [];
+  shipping: Shipping;
+  international_delivery_mode: string;
+  seller_address: SellerAddress;
+  seller_contact: null;
+  location: Location;
+  coverage_areas: [];
+  attributes: Attribute[];
+  listing_source: string;
+  variations: Variation[];
+  status: string;
+  sub_status: [];
+  tags: string[];
+  warranty: string;
+  catalog_product_id: null;
+  domain_id: string;
+  parent_item_id: null;
+  deal_ids: [];
+  automatic_relist: boolean;
+  date_created: Date;
+  last_updated: Date;
+  health: number;
+  catalog_listing: boolean;
+}
+
+export interface Value {
+  id: null | string;
+  name: string;
+  struct: null;
+}
+
+export interface Location {
+}
+
+export interface Picture {
+  id: string;
+  url: string;
+  secure_url: string;
+  size: string;
+  max_size: string;
+  quality: string;
+}
+
+export interface SaleTerm {
+  id: string;
+  name: string;
+  value_id: string;
+  value_name: string;
+  value_struct?: null;
+  values: Value[];
+  value_type: string;
+}
+
+export interface SellerAddress {
+  city: City;
+  state: City;
+  country: City;
+  search_location: SearchLocation;
+  id: number;
+}
+
+export interface City {
+  id: string;
+  name: string;
+}
+
+export interface SearchLocation {
+  city: City;
+  state: City;
+}
+
+export interface Variation {
+  id: number;
+  price: number;
+  attribute_combinations: SaleTerm[];
+  sale_terms: [];
+  picture_ids: string[];
+  catalog_product_id: null;
+}
+

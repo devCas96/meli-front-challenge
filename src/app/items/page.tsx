@@ -3,9 +3,9 @@ import ProductServices from '@/services/products';
 import { IProductsLocal } from '@/types/types';
 import ProductList from '@/components/organisms/product-list/product-list';
 import styles from './page.module.css';
+
 interface SearchParams {
   search: string;
-  // Add other properties if needed
 }
 
 interface ProductItemsProps {
