@@ -3,8 +3,8 @@ import { useRouter } from 'next/navigation';
 import { Copies } from '@/constants/copies';
 import ButtonIcon from '@/components/atoms/button-icon/button-icon';
 import { CloudnaryImages } from '@/constants/cloudnary-media';
-import styles from './header-searcher.module.css';
 import Checkers from '@/utilities/checkers';
+import styles from './header-searcher.module.css';
 
 export default function HeaderSearcher() {
   const router = useRouter();
@@ -23,7 +23,6 @@ export default function HeaderSearcher() {
       <input
         className={styles.header__searcher__input}
         autoFocus
-        tabIndex={0}
         placeholder={Copies.SEARCH_PLACEHOLDER}
         type='search'
         id='site-search'
