@@ -1,0 +1,40 @@
+.product {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--meli-spacing-m);
+}
+
+.product__info {
+  margin-left: 48px;
+  max-width: 330px;
+  width: 330px;
+}
+
+.product__info>p {
+  font-size: var(--meli-font-size-xxxs);
+  font-weight: bold;
+  color: var(--meli-color-palette-darkgray);
+}
+
+.product__info>h1 {
+  text-wrap: balance;
+  font-size: var(--meli-font-size-sm);
+  font-weight: bold;
+  margin: var(--meli-spacing-s) 0 var(--meli-spacing-m);
+}
+
+.product__info>h2 {
+  font-size: var(--meli-font-size-l);
+  margin-bottom: var(--meli-spacing-m);
+}
+
+.product__info>button {
+  font-size: var(--meli-font-size-xs);
+  color: #fff;
+  background-color: var(--meli-color-palette-blue);
+  border-radius: 6px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+}
