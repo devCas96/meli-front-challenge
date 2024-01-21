@@ -11,12 +11,12 @@ export async function GET(request: Request, { params }: { params: { slug: string
   const productId = params.slug;
 
   if (!productId) {
-    return new Response(BackErrors.WRONG_PARAMS, { status: HttpStatus.BAD_REQUEST });
+    return new Response(JSON.stringify(BackErrors.WRONG_PARAMS), { status: HttpStatus.BAD_REQUEST });
   }
 
   const res = await fetch(`${API_BASE_URL}/items/${productId}`);
   if (!res.ok) {
-    return new Response(BackErrors.SERVER_ERROR, { status: HttpStatus.INTERNAL_SERVER_ERROR });
+    return new Response(JSON.stringify(BackErrors.SERVER_ERROR), { status: HttpStatus.INTERNAL_SERVER_ERROR });
   }
 
   //Initial fetch of Product detail

@@ -1,5 +1,6 @@
 export enum FrontErrors {
-  EMPTY_RESULT = 'Ups! No results found with those search params.'
+  EMPTY_RESULT = 'Ups! No results found with those search params.',
+  INVALID_ROUTE = 'Ups! Genius captured. Let\'s try to search in the searchbar.'
 }
 
 export enum BackErrors {

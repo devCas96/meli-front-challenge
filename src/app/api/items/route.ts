@@ -12,13 +12,13 @@ export async function GET(request: Request) {
   const query = searchParams.get('q');
 
   if (!query) {
-    return new Response(BackErrors.WRONG_PARAMS, { status: HttpStatus.BAD_REQUEST });
+    return new Response(JSON.stringify(BackErrors.WRONG_PARAMS), { status: HttpStatus.BAD_REQUEST });
   }
 
   const res = await fetch(`${API_BASE_URL_WITH_SITEID}/search?q=${query}&limit=${EXTERNAL_API_LIMIT}`);
 
   if (!res.ok) {
-    return new Response(BackErrors.SERVER_ERROR, { status: HttpStatus.INTERNAL_SERVER_ERROR });
+    return new Response(JSON.stringify(BackErrors.SERVER_ERROR), { status: HttpStatus.INTERNAL_SERVER_ERROR });
   }
 
   const apiData: IProductServices = await res.json();
