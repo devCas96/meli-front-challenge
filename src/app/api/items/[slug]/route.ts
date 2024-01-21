@@ -1,9 +1,8 @@
+import { IFullItem, IFullProductLocal, IFullProductServices } from '@/types/types';
 import { BackErrors } from '@/constants/errors';
 import { API_BASE_URL } from '@/constants/globals';
 import { HttpStatus } from '@/constants/http';
-import ProductMapper from '@/mappers/product-mapper';
-import { IFullItem, IFullProductLocal, IFullProductServices } from '@/types/types';
-import { productWithDescription } from '@/utilities/product-with-description';
+import ProductHandler from '@/utilities/product-handler';
 
 export const dynamic = 'force-dynamic';
 
@@ -20,11 +19,12 @@ export async function GET(request: Request, { params }: { params: { slug: string
   }
 
   //Initial fetch of Product detail
-  const apiData: IFullProductServices = await res.json();
-  const localProduct: IFullProductLocal = ProductMapper.mapFromFullProductServicesToLocalFullProduct(apiData);
+  const apiBaseData: IFullProductServices = await res.json();
+  const localProduct: IFullProductLocal = await ProductHandler.productDetailResponseHandler(apiBaseData);
 
   //Fetch Product detail description and merge with the prev data
-  const localProductWithDescription: IFullItem = await productWithDescription(localProduct.item, productId);
+  const localProductWithDescription: IFullItem = await ProductHandler.productWithDescription(localProduct.item, productId);
+
   localProduct.item = localProductWithDescription;
 
   return Response.json(localProduct);

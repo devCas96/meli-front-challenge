@@ -28,7 +28,7 @@ export default async function ProductItems({
 
   return (
     <>
-      <Breadcrum />
+      <Breadcrum items={products.categories} />
       <ProductList products={products} />
     </>
   );

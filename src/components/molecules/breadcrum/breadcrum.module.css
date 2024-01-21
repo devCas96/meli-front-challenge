@@ -1,5 +1,12 @@
 .breadcrum {
   margin: var(--meli-spacing-s) 0;
+}
+
+.breadcrum__item {
   color: var(--meli-color-palette-gray);
   font-size: var(--meli-font-size-xxs);
+}
+
+.breadcrum__item--highlited {
+  font-weight: bold;
 }

@@ -19,7 +19,7 @@ export default async function ProductDetailPage({
 
   return (
     <>
-      <Breadcrum />
+      <Breadcrum items={product.categories} />
       <ProductDetail product={product.item} />
     </>
   );

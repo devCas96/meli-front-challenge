@@ -1,9 +1,8 @@
-import ProductMapper from '@/mappers/product-mapper';
 import { IItem, IProductServices, IProductsLocal } from '@/types/types';
 import { BackErrors } from '@/constants/errors';
 import { API_BASE_URL_WITH_SITEID, EXTERNAL_API_LIMIT } from '@/constants/globals';
 import { HttpStatus } from '@/constants/http';
-import { productsWithCity } from '@/utilities/products-with-city';
+import ProductHandler from '@/utilities/product-handler';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,13 +20,12 @@ export async function GET(request: Request) {
     return new Response(JSON.stringify(BackErrors.SERVER_ERROR), { status: HttpStatus.INTERNAL_SERVER_ERROR });
   }
 
-  const apiData: IProductServices = await res.json();
+  const apiBaseData: IProductServices = await res.json();
 
-  const localProducts: IProductsLocal = ProductMapper.mapFromProductServicesToLocalProduct(apiData);
-  const localProductsWithCity: IItem[] = await productsWithCity(localProducts.items);
+  const localProducts: IProductsLocal = await ProductHandler.productResponseHandler(apiBaseData.results);
+  const localProductsWithCity: IItem[] = await ProductHandler.productsWithCity(localProducts.items);
 
   localProducts.items = localProductsWithCity;
-
 
   return Response.json(localProducts);
 }
