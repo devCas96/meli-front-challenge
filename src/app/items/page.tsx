@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import ProductServices from '@/services/products';
 import { IProductsLocal } from '@/types/types';
 import ProductList from '@/components/organisms/product-list/product-list';
@@ -19,11 +18,11 @@ export default async function ProductItems({
     searchParams.search
   );
   return (
-    <Suspense fallback={<p>Loading feed...</p>}>
+    <>
       <p className={styles.breadcrum}>
         {'Breadcrum > breadcrum > breadcrum > Breadcrum > breadcrum '}
       </p>
       <ProductList products={products} />
-    </Suspense>
+    </>
   );
 }

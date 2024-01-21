@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import ProductServices from '@/services/products';
 import { IFullProductLocal } from '@/types/types';
 import ProductDetail from '@/components/organisms/product-detail/product-detail';
@@ -11,11 +10,10 @@ export default async function ProductDetailPage({
   const product: IFullProductLocal = await ProductServices.getProductById(
     params.slug
   );
-
   return (
-    <Suspense fallback={<p>Loading feed...</p>}>
+    <>
       <p>{'Breadcrum > breadcrum > breadcrum > Breadcrum > breadcrum '}</p>
       <ProductDetail product={product.item} />
-    </Suspense>
+    </>
   );
 }

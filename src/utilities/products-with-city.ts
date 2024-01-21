@@ -7,7 +7,6 @@ export const productsWithCity = async (products: IItem[]) => {
   const localProductsWithCity = await Promise.all(
     products.map(async (item) => {
       const user = await UserServices.getUserById(item.seller_id);
-      console.log(user);
       return {
         ...item,
         city: user.address.city,

@@ -1,6 +1,9 @@
 @import url('./reset.css');
 
 :root {
+  --loader-background-color: #EEEEEE;
+  --loader-highlight-color: #DEDEDE;
+
   --meli-color-palette-yellow: #FFE600;
   --meli-color-palette-dark: #333333;
   --meli-color-palette-darkgray: #666666;
