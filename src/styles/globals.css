@@ -31,6 +31,11 @@
   color: var(--meli-color-palette-dark);
 }
 
+:focus {
+  outline: none;
+  border: 1px solid #03d1d1;
+}
+
 main {
   width: 80%;
   margin: 0 auto;

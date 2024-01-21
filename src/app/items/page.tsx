@@ -1,7 +1,7 @@
 import ProductServices from '@/services/products';
 import { IProductsLocal } from '@/types/types';
 import ProductList from '@/components/organisms/product-list/product-list';
-import styles from './page.module.css';
+import Breadcrum from '@/components/molecules/breadcrum/breadcrum';
 
 interface SearchParams {
   search: string;
@@ -19,9 +19,7 @@ export default async function ProductItems({
   );
   return (
     <>
-      <p className={styles.breadcrum}>
-        {'Breadcrum > breadcrum > breadcrum > Breadcrum > breadcrum '}
-      </p>
+      <Breadcrum />
       <ProductList products={products} />
     </>
   );

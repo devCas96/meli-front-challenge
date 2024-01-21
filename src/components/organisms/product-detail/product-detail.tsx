@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import styles from './product-detail.module.css';
 import { Copies } from '@/constants/copies';
 import { IFullItem } from '@/types/types';
 import priceByCurrency from '@/utilities/price-by-currency';
 import { Locales } from '@/constants/locales';
+import styles from './product-detail.module.css';
 
 interface ProductDetailProps {
   product: IFullItem;

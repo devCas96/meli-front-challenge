@@ -15,7 +15,7 @@ export default function HeaderSearcher() {
 
     if (!Checkers.checkIsValidString($searchInput.value)) return;
 
-    router.push(`items?search=${$searchInput.value}`);
+    router.push(`/items?search=${$searchInput.value}`);
   };
 
   return (

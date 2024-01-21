@@ -1,6 +1,7 @@
 import ProductServices from '@/services/products';
 import { IFullProductLocal } from '@/types/types';
 import ProductDetail from '@/components/organisms/product-detail/product-detail';
+import Breadcrum from '@/components/molecules/breadcrum/breadcrum';
 
 export default async function ProductDetailPage({
   params,
@@ -12,7 +13,7 @@ export default async function ProductDetailPage({
   );
   return (
     <>
-      <p>{'Breadcrum > breadcrum > breadcrum > Breadcrum > breadcrum '}</p>
+      <Breadcrum />
       <ProductDetail product={product.item} />
     </>
   );

@@ -3,6 +3,7 @@
   display: flex;
   flex-flow: column;
   padding: var(--meli-spacing-m);
+  margin-bottom: calc(var(--meli-spacing-m) * 2);
 }
 
 .product__head {
@@ -55,4 +56,6 @@
   font-size: var(--meli-font-size-xs);
   color: var(--meli-color-palette-gray);
   text-wrap: pretty;
+  word-spacing: 1px;
+  line-height: 1.25;
 }

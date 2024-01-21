@@ -31,7 +31,6 @@
   .products__info>.products__price {
     display: flex;
     align-items: center;
-    font-size: var(--meli-font-size-sm);
     margin-bottom: var(--meli-spacing-m);
   }
 
