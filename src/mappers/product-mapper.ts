@@ -39,7 +39,7 @@ const ProductMapper = {
     return reduceItems;
   },
   mapFromFullProductServicesToLocalFullProduct: (fullProductResponse: IFullProductServices): IFullProductLocal => {
-    const { id, title, price, thumbnail, condition, shipping, currency_id, initial_quantity } = fullProductResponse;
+    const { id, title, price, condition, shipping, currency_id, initial_quantity, pictures } = fullProductResponse;
     return {
       author: AUTHOR_SIGN,
       item: {
@@ -51,7 +51,7 @@ const ProductMapper = {
           currency: currency_id,
           decimals: 0,
         },
-        picture: thumbnail,
+        picture: pictures[0].secure_url,
         condition,
         free_shipping: shipping.free_shipping,
         sold_quantity: initial_quantity,

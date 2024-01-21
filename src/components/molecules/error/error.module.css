@@ -2,7 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column;
   height: 90dvh;
+  text-align: center;
+  gap: var(--meli-spacing-s);
 
   .error__message {
     font-size: 1.3rem;

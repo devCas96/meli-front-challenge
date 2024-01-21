@@ -31,10 +31,10 @@
   color: var(--meli-color-palette-dark);
 }
 
-/* :focus {
+:focus-visible {
   outline: none;
   border: 1px solid #03d1d1;
-} */
+}
 
 main {
   width: 80%;
@@ -50,4 +50,8 @@ input {
 input::placeholder {
   color: var(--meli-color-palette-gray);
   font-size: var(--meli-font-size-s);
+}
+
+button {
+  cursor: pointer;
 }
