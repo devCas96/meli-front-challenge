@@ -7,7 +7,7 @@ export const IS_VALID_STRING_REGEX = /^[a-z0-9,ñ\s]{0,255}$/i;
 export const EXTERNAL_API_LIMIT = 4;
 export const API_BASE_URL_WITH_SITEID = `${MELI_API_BASE_URL}sites/${MELI_SITE_ID}`;
 export const API_BASE_URL = `${MELI_API_BASE_URL}`;
-export const ROOT_URL = 'http://localhost:3000/';
+export const ROOT_URL = process.env.NODE_ENV === 'production' ? 'https://meli-front-challenge-seven.vercel.app/' : 'http://localhost:3000/';
 export const BASE_PATH = '/';
 
 export const CLOUDINARY_RESOURCES = {
