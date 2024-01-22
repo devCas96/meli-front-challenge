@@ -4,6 +4,7 @@ import { IFullItem } from '@/types/types';
 import priceByCurrency from '@/utilities/price-by-currency';
 import Image from 'next/image';
 import styles from './product-detail.module.css';
+import { EXTERNAL_RESOURCES } from '@/constants/globals';
 
 interface Props {
   product: IFullItem;
@@ -12,6 +13,7 @@ interface Props {
 export default function ProductDetail(props: Props) {
   const { product } = props;
 
+  const { detailImage } = EXTERNAL_RESOURCES;
   return (
     <article className={styles.product}>
       <div className={styles.product__head}>
@@ -19,8 +21,8 @@ export default function ProductDetail(props: Props) {
           className={styles.product__image}
           data-testid='product-image'
           src={product.picture}
-          width={680}
-          height={680}
+          width={detailImage.width}
+          height={detailImage.height}
           alt={`${product.title} image`}
         />
         <div data-testid='product-info' className={styles.product__info}>
