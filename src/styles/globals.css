@@ -39,10 +39,10 @@ img {
   user-drag: none;
 }
 
-:focus-visible {
+/* :focus-visible {
   outline: none;
   border: 1px solid #03d1d1;
-}
+} */
 
 main {
   width: 80%;
