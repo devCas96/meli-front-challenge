@@ -14,3 +14,11 @@
     aspect-ratio: 11/8;
   }
 }
+
+@media (max-width: 1270px) {
+  .header {
+    .header__wrapper {
+      width: 95%;
+    }
+  }
+}

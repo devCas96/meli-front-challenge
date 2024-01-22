@@ -20,12 +20,13 @@ export default function HeaderSearcher() {
   };
 
   return (
-    <form onSubmit={handleSearchProduct} className={styles.header__searcher}>
+    <form onSubmit={handleSearchProduct} className={styles.searcher}>
       <input
-        className={styles.header__searcher__input}
+        className={styles.searcher__input}
         placeholder={Copies.SEARCH_PLACEHOLDER}
         type='search'
         data-testid='input-search'
+        maxLength={120}
       />
       <ButtonIcon
         buttonProps={{
@@ -33,7 +34,7 @@ export default function HeaderSearcher() {
           ariaLabel: 'Presiona para buscar',
           type: ButtonTypes.SUBMIT,
           onClick: () => {},
-          className: styles.header__searcher__button,
+          className: styles.searcher__button,
         }}
         iconProps={{
           iconAlt: 'Icon search',

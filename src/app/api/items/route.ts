@@ -20,8 +20,10 @@ export async function GET(request: Request) {
     return new Response(JSON.stringify(BackErrors.SERVER_ERROR), { status: HttpStatus.INTERNAL_SERVER_ERROR });
   }
 
+  //Initial fetch of Products
   const apiBaseData: IProductServices = await res.json();
 
+  //Fetch Products categories, city and merge with the prev data
   const localProducts: IProductsLocal = await ProductHandler.productResponseHandler(apiBaseData.results);
   const localProductsWithCity: IItem[] = await ProductHandler.productsWithCity(localProducts.items);
 

@@ -63,3 +63,15 @@ input::placeholder {
 button {
   cursor: pointer;
 }
+
+@media (max-width: 1270px) {
+  main {
+    width: 95%;
+  }
+}
+
+@media (max-width: 680px) {
+  input::placeholder {
+    font-size: var(--meli-font-size-xs);
+  }
+}

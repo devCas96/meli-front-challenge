@@ -20,27 +20,53 @@
     margin-top: var(--meli-spacing-s);
   }
 
-  .products__info>p {
+  .products__price {
     display: flex;
     align-items: center;
     font-size: var(--meli-font-size-sm);
     margin-bottom: var(--meli-spacing-m);
   }
 
-  .products__info>p>img {
+  .products__price>img {
     margin-left: 10px;
   }
 
-  .products__info>h2 {
+  .products__title {
     font-size: var(--meli-font-size-s);
     max-width: 70%;
     text-wrap: pretty;
   }
 
-  .products__item>span {
+  .products__city {
     margin-top: calc(var(--meli-spacing-s) + var(--meli-spacing-m));
     font-weight: bold;
     font-size: var(--meli-font-size-xxxs);
     color: var(--meli-color-palette-gray);
+  }
+}
+
+@media (max-width: 680px) {
+  .products {
+    .products__item {
+      flex-flow: column;
+      align-items: center;
+    }
+
+    .products__info {
+      width: 100%;
+    }
+
+    .products__title {
+      max-width: 90%;
+      font-size: var(--meli-font-size-xxs);
+    }
+
+    .products__price {
+      margin-bottom: var(--meli-spacing-s);
+    }
+
+    .products__city {
+      margin-top: var(--meli-spacing-s);
+    }
   }
 }

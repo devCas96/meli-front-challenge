@@ -36,7 +36,7 @@ export default function ProductList(props: Props) {
               aria-hidden='true'
             />
             <div className={styles.products__info} aria-hidden='true'>
-              <p>
+              <p className={styles.products__price}>
                 {priceByCurrency(
                   product.price.amount,
                   product.price.currency,
@@ -51,9 +51,11 @@ export default function ProductList(props: Props) {
                   />
                 )}
               </p>
-              <h2>{product.title}</h2>
+              <h2 className={styles.products__title}>{product.title}</h2>
             </div>
-            <span aria-hidden='true'>{product.city}</span>
+            <span className={styles.products__city} aria-hidden='true'>
+              {product.city}
+            </span>
           </Link>
         </li>
       ))}
