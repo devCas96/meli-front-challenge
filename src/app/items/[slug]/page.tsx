@@ -28,6 +28,10 @@ export async function generateMetadata(
     openGraph: {
       images: [product.item.picture, ...previousImages],
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
