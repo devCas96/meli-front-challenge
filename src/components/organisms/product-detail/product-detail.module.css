@@ -84,6 +84,7 @@
       display: flex;
       flex-flow: column;
       align-items: center;
+      gap: 2rem;
 
       .product__info {
         margin-left: 0;

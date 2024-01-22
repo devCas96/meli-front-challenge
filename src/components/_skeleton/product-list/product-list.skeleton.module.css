@@ -87,3 +87,24 @@
     background-position: -200% 0;
   }
 }
+
+@media (max-width: 680px) {
+  .products {
+    .products__item {
+      flex-flow: column;
+      align-items: center;
+    }
+
+    .products__info {
+      width: 100%;
+
+      .products__price {
+        margin-bottom: var(--meli-spacing-s);
+      }
+    }
+
+    .products__city {
+      margin-top: var(--meli-spacing-s);
+    }
+  }
+}

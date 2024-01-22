@@ -112,3 +112,34 @@
     background-position: -200% 0;
   }
 }
+
+@media (max-width: 1024px) {
+  .product {
+    .product__head {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 2rem;
+
+      .product__line:nth-child(2) {
+        margin: var(--meli-spacing-s) 0 var(--meli-spacing-m);
+      }
+
+      .product__line:nth-child(3),
+      .product__line:nth-child(4) {
+        display: none;
+      }
+
+      .product__price {
+        width: 180px;
+        height: 32px;
+      }
+
+      .product__info {
+        margin-left: 0;
+        max-width: unset;
+        width: 100%;
+      }
+    }
+  }
+}
