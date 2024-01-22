@@ -6,7 +6,7 @@ import ProductHandler from '@/utilities/product-handler';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request: Request, { params }: { params: { slug: string } }) {
+export async function GET(_: Request, { params }: { params: { slug: string } }) {
   const productId = params.slug;
 
   if (!productId) {

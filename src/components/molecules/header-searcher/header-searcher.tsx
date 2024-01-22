@@ -22,11 +22,9 @@ export default function HeaderSearcher() {
     <form onSubmit={handleSearchProduct} className={styles.header__searcher}>
       <input
         className={styles.header__searcher__input}
-        autoFocus
         placeholder={Copies.SEARCH_PLACEHOLDER}
         type='search'
-        id='site-search'
-        name='q'
+        data-testid='input-search'
       />
       <ButtonIcon
         buttonType='submit'

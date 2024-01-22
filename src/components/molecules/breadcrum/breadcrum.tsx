@@ -7,7 +7,7 @@ interface BreadcrumProps {
 
 export default function Breadcrum({ items = [] }: BreadcrumProps) {
   return (
-    <div tabIndex={4} className={styles.breadcrum}>
+    <div className={styles.breadcrum} data-testid='breadcrum'>
       {items.map((item, index) => {
         const isLastElement = items.length === index + 1;
         return (

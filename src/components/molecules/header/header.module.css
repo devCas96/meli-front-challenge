@@ -9,4 +9,8 @@
     margin: 0 auto;
     gap: 25px;
   }
+
+  .header__wrapper>a>img {
+    aspect-ratio: 11/8;
+  }
 }

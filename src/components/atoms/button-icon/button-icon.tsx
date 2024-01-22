@@ -1,5 +1,4 @@
 import { CldImage } from 'next-cloudinary';
-import React from 'react';
 
 interface ButtonIconProps {
   iconProps: {
@@ -9,7 +8,7 @@ interface ButtonIconProps {
     iconAlt: string;
     isIconPriority?: boolean;
   };
-  buttonType: 'submit' | 'reset' | 'button' | undefined;
+  buttonType?: 'submit' | 'reset' | 'button';
   buttonClassName: string;
   buttonClick: () => void;
 }
@@ -28,9 +27,16 @@ export default function ButtonIcon({
     isIconPriority = false,
   } = iconProps;
   return (
-    <button onClick={buttonClick} className={buttonClassName} type={buttonType}>
+    <button
+      data-testid='search-button'
+      aria-label='Presiona para buscar'
+      onClick={buttonClick}
+      className={buttonClassName}
+      type={buttonType}
+    >
       <CldImage
-        alt={iconAlt}
+        aria-hidden='true'
+        alt=''
         width={iconWidth}
         height={iconHeight}
         src={iconSrc}

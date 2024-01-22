@@ -13,8 +13,14 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   return (
     <article className={styles.product}>
       <div className={styles.product__head}>
-        <Image src={product.picture} width={680} height={680} alt='productoo' />
-        <div className={styles.product__info}>
+        <Image
+          data-testid='product-image'
+          src={product.picture}
+          width={680}
+          height={680}
+          alt='productoo'
+        />
+        <div data-testid='product-info' className={styles.product__info}>
           <p>
             {product.condition} - {product.sold_quantity}{' '}
             {Copies.PRODUCT_DETAIL_SOLD_QUANTITY}
@@ -31,7 +37,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </div>
       </div>
       {product.description && (
-        <div className={styles.product__body}>
+        <div data-testid='product-description' className={styles.product__body}>
           <h3>{Copies.PRODUCT_DETAIl_DESCRIPTION_TITLE}</h3>
           <p>{product.description}</p>
         </div>

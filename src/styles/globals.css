@@ -31,6 +31,14 @@
   color: var(--meli-color-palette-dark);
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 :focus-visible {
   outline: none;
   border: 1px solid #03d1d1;

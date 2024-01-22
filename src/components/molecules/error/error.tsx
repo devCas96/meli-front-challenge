@@ -13,7 +13,7 @@ export default function ErrorComponent({
   message,
 }: ErrorComponentProps) {
   return (
-    <div className={styles.error}>
+    <div className={styles.error} data-testid='error-component'>
       <p className={styles.error__message}>{message}</p>
       {children}
     </div>
