@@ -4,12 +4,22 @@ import ProductList from '@/components/organisms/product-list/product-list';
 import { FrontErrors } from '@/constants/errors';
 import ProductServices from '@/services/products';
 import { IProductsLocal } from '@/types/types';
+import { Metadata } from 'next';
 
 interface Props {
   searchParams: {
     search: string;
   };
 }
+
+export const metadata: Metadata = {
+  title: 'Meli challenge - Results page',
+  description: 'Page with the four products searched by the search bar.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default async function ProductItems(props: Props) {
   const { searchParams } = props;
