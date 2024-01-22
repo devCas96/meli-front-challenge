@@ -1,10 +1,12 @@
 import styles from './product-list.skeleton.module.css';
 
-interface productListProps {
+interface Props {
   products: number[];
 }
 
-export default function ProductListSkeleton({ products }: productListProps) {
+export default function ProductListSkeleton(props: Props) {
+  const { products } = props;
+
   return (
     <ol className={styles.products}>
       {products.map((_, index) => (

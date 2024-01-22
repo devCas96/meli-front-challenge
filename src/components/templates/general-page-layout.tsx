@@ -1,10 +1,12 @@
 import Header from '../molecules/header/header';
 
-interface LayoutProps {
+interface Props {
   children: React.ReactNode;
 }
 
-export default function GeneralPageLayout({ children }: LayoutProps) {
+export default function GeneralPageLayout(props: Props) {
+  const { children } = props;
+
   return (
     <>
       <Header />

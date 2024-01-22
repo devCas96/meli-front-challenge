@@ -1,11 +1,13 @@
 import { ICategory } from '@/types/types';
 import styles from './breadcrum.module.css';
 
-interface BreadcrumProps {
+interface Props {
   items: ICategory[];
 }
 
-export default function Breadcrum({ items = [] }: BreadcrumProps) {
+export default function Breadcrum(props: Props) {
+  const { items } = props;
+
   return (
     <div className={styles.breadcrum} data-testid='breadcrum'>
       {items.map((item, index) => {

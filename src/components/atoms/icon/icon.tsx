@@ -2,7 +2,7 @@
 
 import { CldImage } from 'next-cloudinary';
 
-interface IconProps {
+interface Props {
   iconSrc: string;
   iconWidth: number;
   iconHeight: number;
@@ -10,12 +10,8 @@ interface IconProps {
   isIconPriority?: boolean;
 }
 
-export default function Icon({
-  iconSrc,
-  iconWidth,
-  iconHeight,
-  iconAlt,
-}: IconProps) {
+export default function Icon(props: Props) {
+  const { iconSrc, iconWidth, iconHeight, iconAlt } = props;
   return (
     <CldImage
       alt={iconAlt}

@@ -1,6 +1,14 @@
+import { ButtonTypes } from '@/constants/globals';
 import { CldImage } from 'next-cloudinary';
 
-interface ButtonIconProps {
+interface Props {
+  buttonProps: {
+    type?: ButtonTypes.BUTTON | ButtonTypes.RESET | ButtonTypes.SUBMIT;
+    className: string;
+    onClick: () => void;
+    testId: string;
+    ariaLabel: string;
+  };
   iconProps: {
     iconSrc: string;
     iconWidth: number;
@@ -8,31 +16,22 @@ interface ButtonIconProps {
     iconAlt: string;
     isIconPriority?: boolean;
   };
-  buttonType?: 'submit' | 'reset' | 'button';
-  buttonClassName: string;
-  buttonClick: () => void;
 }
 
-export default function ButtonIcon({
-  iconProps,
-  buttonClassName,
-  buttonClick,
-  buttonType,
-}: ButtonIconProps) {
-  const {
-    iconSrc,
-    iconWidth,
-    iconHeight,
-    iconAlt,
-    isIconPriority = false,
-  } = iconProps;
+export default function ButtonIcon(props: Props) {
+  const { buttonProps, iconProps } = props;
+
+  const { onClick, className, type, testId, ariaLabel } = buttonProps;
+
+  const { iconSrc, iconWidth, iconHeight, isIconPriority = false } = iconProps;
+
   return (
     <button
-      data-testid='search-button'
-      aria-label='Presiona para buscar'
-      onClick={buttonClick}
-      className={buttonClassName}
-      type={buttonType}
+      data-testid={testId}
+      aria-label={ariaLabel}
+      onClick={onClick}
+      className={className}
+      type={type}
     >
       <CldImage
         aria-hidden='true'

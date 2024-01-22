@@ -6,7 +6,14 @@ export const EXTERNAL_API_LIMIT = 4;
 export const API_BASE_URL_WITH_SITEID = `${MELI_API_BASE_URL}sites/${MELI_SITE_ID}`;
 export const API_BASE_URL = `${MELI_API_BASE_URL}`;
 export const ROOT_URL = 'http://localhost:3000/';
+export const BASE_PATH = '/';
 export const AUTHOR_SIGN = {
   name: 'Sebastian',
   lastname: 'Achuri'
 };
+
+export enum ButtonTypes {
+  SUBMIT = 'submit',
+  RESET = 'reset',
+  BUTTON = 'button',
+}

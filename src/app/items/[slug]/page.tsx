@@ -1,15 +1,17 @@
-import ProductServices from '@/services/products';
-import { IFullProductLocal } from '@/types/types';
-import ProductDetail from '@/components/organisms/product-detail/product-detail';
 import Breadcrum from '@/components/molecules/breadcrum/breadcrum';
 import ErrorComponent from '@/components/molecules/error/error';
+import ProductDetail from '@/components/organisms/product-detail/product-detail';
 import { FrontErrors } from '@/constants/errors';
+import ProductServices from '@/services/products';
+import { IFullProductLocal } from '@/types/types';
 
-export default async function ProductDetailPage({
-  params,
-}: {
+interface Props {
   params: { slug: string };
-}) {
+}
+
+export default async function ProductDetailPage(props: Props) {
+  const { params } = props;
+
   const product: IFullProductLocal = await ProductServices.getProductById(
     params.slug
   );

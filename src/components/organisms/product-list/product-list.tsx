@@ -7,11 +7,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './product-list.module.css';
 
-interface productListProps {
+interface Props {
   products: IProductsLocal;
 }
 
-export default function ProductList({ products }: productListProps) {
+export default function ProductList(props: Props) {
+  const { products } = props;
+
   return (
     <ol className={styles.products}>
       {products.items.map((product) => (

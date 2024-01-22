@@ -1,9 +1,10 @@
-import { FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
-import { Copies } from '@/constants/copies';
 import ButtonIcon from '@/components/atoms/button-icon/button-icon';
 import { CloudnaryImages } from '@/constants/cloudnary-media';
+import { Copies } from '@/constants/copies';
+import { ButtonTypes } from '@/constants/globals';
 import Checkers from '@/utilities/checkers';
+import { useRouter } from 'next/navigation';
+import { FormEvent } from 'react';
 import styles from './header-searcher.module.css';
 
 export default function HeaderSearcher() {
@@ -27,9 +28,13 @@ export default function HeaderSearcher() {
         data-testid='input-search'
       />
       <ButtonIcon
-        buttonType='submit'
-        buttonClick={() => {}}
-        buttonClassName={styles.header__searcher__button}
+        buttonProps={{
+          testId: 'search-button',
+          ariaLabel: 'Presiona para buscar',
+          type: ButtonTypes.SUBMIT,
+          onClick: () => {},
+          className: styles.header__searcher__button,
+        }}
         iconProps={{
           iconAlt: 'Icon search',
           iconWidth: 20,

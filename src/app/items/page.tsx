@@ -1,21 +1,19 @@
-import ProductServices from '@/services/products';
-import { IProductsLocal } from '@/types/types';
-import ProductList from '@/components/organisms/product-list/product-list';
 import Breadcrum from '@/components/molecules/breadcrum/breadcrum';
 import ErrorComponent from '@/components/molecules/error/error';
+import ProductList from '@/components/organisms/product-list/product-list';
 import { FrontErrors } from '@/constants/errors';
+import ProductServices from '@/services/products';
+import { IProductsLocal } from '@/types/types';
 
-interface SearchParams {
-  search: string;
+interface Props {
+  searchParams: {
+    search: string;
+  };
 }
 
-interface ProductItemsProps {
-  searchParams: SearchParams;
-}
+export default async function ProductItems(props: Props) {
+  const { searchParams } = props;
 
-export default async function ProductItems({
-  searchParams,
-}: ProductItemsProps) {
   const products: IProductsLocal = await ProductServices.getProductsByQuery(
     searchParams.search
   );

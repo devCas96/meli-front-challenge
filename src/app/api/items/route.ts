@@ -1,7 +1,7 @@
-import { IItem, IProductServices, IProductsLocal } from '@/types/types';
 import { BackErrors } from '@/constants/errors';
 import { API_BASE_URL_WITH_SITEID, EXTERNAL_API_LIMIT } from '@/constants/globals';
 import { HttpStatus } from '@/constants/http';
+import { IItem, IProductServices, IProductsLocal } from '@/types/types';
 import ProductHandler from '@/utilities/product-handler';
 
 export const dynamic = 'force-dynamic';

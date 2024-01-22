@@ -1,15 +1,17 @@
-import Image from 'next/image';
 import { Copies } from '@/constants/copies';
+import { Locales } from '@/constants/locales';
 import { IFullItem } from '@/types/types';
 import priceByCurrency from '@/utilities/price-by-currency';
-import { Locales } from '@/constants/locales';
+import Image from 'next/image';
 import styles from './product-detail.module.css';
 
-interface ProductDetailProps {
+interface Props {
   product: IFullItem;
 }
 
-export default function ProductDetail({ product }: ProductDetailProps) {
+export default function ProductDetail(props: Props) {
+  const { product } = props;
+
   return (
     <article className={styles.product}>
       <div className={styles.product__head}>
@@ -18,7 +20,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
           src={product.picture}
           width={680}
           height={680}
-          alt='productoo'
+          alt={`${product.title} image`}
         />
         <div data-testid='product-info' className={styles.product__info}>
           <p>
