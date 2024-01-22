@@ -1,0 +1,24 @@
+.header {
+  background-color: var(--meli-color-palette-yellow);
+  padding: 8px 0;
+
+  .header__wrapper {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+    gap: 25px;
+  }
+
+  .header__wrapper>a>img {
+    aspect-ratio: 11/8;
+  }
+}
+
+@media (max-width: 1270px) {
+  .header {
+    .header__wrapper {
+      width: 95%;
+    }
+  }
+}

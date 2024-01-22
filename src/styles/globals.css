@@ -1,6 +1,9 @@
 @import url('./reset.css');
 
 :root {
+  --loader-background-color: #EEEEEE;
+  --loader-highlight-color: #DEDEDE;
+
   --meli-color-palette-yellow: #FFE600;
   --meli-color-palette-dark: #333333;
   --meli-color-palette-darkgray: #666666;
@@ -20,16 +23,50 @@
   --meli-spacing-m: 32px;
 
   --meli-desktop-screen: 680px;
-
-  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
   background-color: var(--meli-color-palette-lightgay);
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--meli-color-palette-dark);
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
   min-height: 100dvh;
+}
+
+input {
+  color: rgba(0, 0, 0, .8980392157);
+  font-size: var(--meli-font-size-xs);
+}
+
+input::placeholder {
+  color: var(--meli-color-palette-gray);
+  font-size: var(--meli-font-size-s);
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1270px) {
+  main {
+    width: 95%;
+  }
+}
+
+@media (max-width: 680px) {
+  input::placeholder {
+    font-size: var(--meli-font-size-xs);
+  }
 }

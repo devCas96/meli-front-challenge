@@ -1,0 +1,31 @@
+.searcher {
+  width: 95%;
+  display: flex;
+  align-items: center;
+
+  .searcher__input {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px 0 0 4px;
+    min-height: 40px;
+    padding: 8px 15px;
+  }
+
+  .searcher__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    min-height: 40px;
+    background-color: var(--meli-color-palette-lightgay);
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .searcher {
+    .searcher__input {
+      font-size: var(--meli-font-size-xs);
+    }
+  }
+}
