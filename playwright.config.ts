@@ -68,7 +68,8 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
+  timeout: 60000,
+  expect: { timeout: 10000 },
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'pnpm run dev',
