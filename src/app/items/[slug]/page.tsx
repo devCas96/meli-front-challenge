@@ -20,6 +20,8 @@ export async function generateMetadata(
     params.slug
   );
 
+  if (Object.values(product.item || {}).length === 0) return {};
+
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
